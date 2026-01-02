@@ -1,0 +1,115 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  18. integration css start
+/*----------------------------------------*/
+
+.pg-integration {
+    &-bg {
+        background-color: #0C2C43;
+    }
+    &-left {
+        margin-right: 45px;
+        @media #{$xl,$lg}{
+            margin-right: 30px;
+        }
+        @media #{$md,$xs}{
+            margin-right: 0px;
+            margin-bottom: 50px;
+        }
+    }
+    &-thumb {
+        padding: 59px 45px;
+        text-align: center;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba($color: #FFFFFF, $alpha: .1);
+    }
+    &-shape-1 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+.it-integration-inner {
+    &-top {
+        @media #{$xs}{
+            margin-bottom: 60px;
+        }
+        & a {
+            height: 211px;
+            width: 211px;
+            line-height: 211px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #F1F5FF;
+            flex: 0 0 auto;
+            @media #{$lg,$md}{
+                height: 170px;
+                width: 170px;
+                line-height: 170px;
+            }
+            @media #{$xs}{
+                height: 80px;
+                width: 80px;
+                line-height: 74px;
+            }
+            @media #{$sm}{
+                height: 100px;
+                width: 100px;
+                line-height: 94px;
+            }
+            & img {
+                @media #{$xs}{
+                    transform: scale(.4);
+                }
+            }
+        }
+        & span {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 45px;
+            margin: 0 50px;
+            letter-spacing: -0.04em;
+            color: var(--it-common-black);
+            @media #{$lg}{
+                font-size: 30px;
+            }
+            @media #{$md}{
+                font-size: 25px;
+            }
+            @media #{$xs}{
+                margin: 0 30px;
+                font-size: 20px;
+            }
+        }
+    }
+    &-wrap {
+        padding: 50px 40px;
+        border-radius: 10px;
+        background-color: #F1F5FF;
+        @media #{$xs}{
+            padding: 40px 25px;
+        }
+        & p {
+            margin-bottom: 0;
+            font-family: var(--it-ff-roboto);
+            @media #{$lg,$md,$xs}{
+                font-size: 15px;
+            }
+        }
+    }
+    &-title {
+        font-weight: 700;
+        font-size: 22px;
+        letter-spacing: -0.01em;
+        color: #000;
+        margin-bottom: 17px;
+        line-height: 1.4;
+        font-family: var(--it-ff-roboto);
+        @media #{$xs}{
+            font-size: 18px;
+        }
+    }
+}
