@@ -105,12 +105,12 @@ export const onePageDataSix: IMenuOnePageDT[] = [
   ...onePageMenuHomeData,
   {
     id: 2,
-    title: 'Workflow',
+    title: 'Flow',
     link: '#service',
   },
   {
     id: 3,
-    title: 'Capabilities',
+    title: 'Core',
     link: '#core-capabilities',
   },
   // {
@@ -130,9 +130,16 @@ export const onePageDataSix: IMenuOnePageDT[] = [
   },
   {
     id: 5,
-    title: 'Investors',
+    title: 'Partner',
+    link: '#partners',
+  },
+  {
+    id: 5,
+    title: 'Invest',
     link: '#investors',
   },
+
+
   {
     id: 6,
     title: 'Faq',

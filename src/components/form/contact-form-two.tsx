@@ -80,14 +80,15 @@ const ContactFormTwo = () => {
                 throw new Error(result.message || "Failed to send message");
             }
 
-            alert(result.message);
+            // alert(result.message);
             reset();
         } catch (error) {
             const errorMessage =
                 error instanceof Error
                     ? error.message
                     : "An unexpected error occurred.";
-            alert(errorMessage);
+            // alert(errorMessage);
+            console.error("Error submitting form:", errorMessage);
         } finally {
             setIsSubmitting(false);
         }

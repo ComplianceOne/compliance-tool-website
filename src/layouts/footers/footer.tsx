@@ -79,7 +79,7 @@ const Footer = () => {
                                                         )
                                                     }
                                                 >
-                                                    Workflow
+                                                    Flow
                                                 </a>
                                             </li>
                                             <li>
@@ -92,7 +92,7 @@ const Footer = () => {
                                                         )
                                                     }
                                                 >
-                                                    Capabilities
+                                                    Core
                                                 </a>
                                             </li>
 
@@ -102,11 +102,24 @@ const Footer = () => {
                                                     onClick={(e) =>
                                                         handleLinkClick(
                                                             e,
+                                                            "#partners"
+                                                        )
+                                                    }
+                                                >
+                                                    Partner
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="/#investors"
+                                                    onClick={(e) =>
+                                                        handleLinkClick(
+                                                            e,
                                                             "#investors"
                                                         )
                                                     }
                                                 >
-                                                    Investors
+                                                    Invest
                                                 </a>
                                             </li>
                                         </ul>

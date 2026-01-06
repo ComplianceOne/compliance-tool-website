@@ -9,6 +9,7 @@ import SoftwareSix from "@/components/software/software-six";
 // import Testimonial from "@/components/testimonial/testimonial";
 import VideoThree from "@/components/video/video-three";
 import SoftwareSeven from "@/components/software/software-seven";
+import SoftwareEight from "@/components/software/software-eight";
 
 const MainContentSix = () => {
     return (
@@ -20,6 +21,7 @@ const MainContentSix = () => {
             <ChooseOne />
             <VideoThree />
             <Price />
+            <SoftwareEight />
             <SoftwareSeven />
             <Faq />
             {/* <Testimonial itemClass="dt-testimonial-area ai-testimonial-style z-index-1 p-relative p-relative" /> */}

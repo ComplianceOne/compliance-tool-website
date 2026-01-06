@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import shapeImg1 from "@/assets/img/shape/software-6-1.png";
 import shapeImg2 from "@/assets/img/shape/software-6-2.png";
-import heroImg1 from "@/assets/images/c4.png";
+import heroImg1 from "@/assets/images/ideamoney.jpg";
 
 const SoftwareSeven = () => {
     return (
@@ -34,7 +34,7 @@ const SoftwareSeven = () => {
                         <div className="it-software-right-box">
                             <div className="ai-section-title-box mb-30">
                                 <h4 className="ai-section-title mb-10 it-split-text it-split-in-right">
-                                    Intrested in Investing?
+                                    Intrested in Investing
                                 </h4>
                                 <div
                                     className="it-fade-anim"
@@ -103,23 +103,13 @@ const SoftwareSeven = () => {
                             </div> */}
 
                             <div
-                                className="p-relative mb-30 it-fade-anim"
-                                data-fade-from="bottom"
-                                data-delay=".5"
+                                className="it-fade-anim"
+                                data-fade-from="top"
+                                data-ease="bounce"
+                                data-delay=".7"
                             >
-                                <Link
-                                    href="https://calendly.com/platformoneinc/complianceone-investor-call"
-                                    target="_blank"
-                                >
-                                    <button
-                                        className={"it-btn"}
-                                        type="submit"
-                                        style={{
-                                            whiteSpace: "nowrap",
-                                        }}
-                                    >
-                                        Schedule a Call
-                                    </button>
+                                <Link className="it-btn" href="https://calendly.com/platformoneinc/complianceone-investor-call">
+                                    Schedule a Call
                                 </Link>
                             </div>
                         </div>

@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useAppSelector } from "@/hooks/redux-hooks";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
 import { selectOnePageData } from "@/redux/selectors/header-selector";
+import { toggleOffCanvas } from "@/redux/slices/header-slice";
 import { IMenuOnePageDT } from "@/types/menu-d-t";
 
 const MobileMenusOnePage = () => {
+    const dispatch = useAppDispatch();
     const onePageMenuData = useAppSelector(selectOnePageData); // Selector for getting the state of One page Data
     const [activeMenu, setActiveMenu] = useState<number | null>(
         onePageMenuData[0]?.id || null
@@ -19,10 +21,44 @@ const MobileMenusOnePage = () => {
         setNavTitle((prev) => (prev === menu ? null : menu));
     };
 
-    // Handler for setting active
-    const handleMenuClick = (id: number) => {
-        setActiveMenu(id);
-    };
+    // Function to scroll to specific section
+    const scrollToSection = useCallback((id: string) => {
+        const element = document.getElementById(id);
+
+        if (element) {
+            const topPosition = element.offsetTop;
+            window.scrollTo({
+                top: topPosition,
+                behavior: "smooth",
+            });
+        }
+    }, []);
+
+    // Handler for menu click with scroll functionality
+    const handleMenuClick = useCallback(
+        (id: number, link: string) => {
+            setActiveMenu(id);
+            // Close the offcanvas menu
+            dispatch(toggleOffCanvas(false));
+
+            const sectionId = link.startsWith("#") ? link.substring(1) : null;
+            if (sectionId) {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    // Small delay to allow offcanvas to close before scrolling
+                    setTimeout(() => {
+                        scrollToSection(sectionId);
+                    }, 300);
+                } else {
+                    // If element doesn't exist (e.g., on another page), navigate to home with hash
+                    window.location.href = `/${link}`;
+                }
+            } else {
+                window.location.href = link;
+            }
+        },
+        [scrollToSection, dispatch]
+    );
 
     return (
         <ul className="it-onepage-menu">
@@ -33,18 +69,20 @@ const MobileMenusOnePage = () => {
                 >
                     <Link
                         href={menu.link}
-                        className={activeMenu === menu.id ? "active" : ""}
-                        onClick={() => handleMenuClick(menu.id)}
+                        // className={activeMenu === menu.id ? "active" : ""}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleMenuClick(menu.id, menu.link);
+                        }}
                     >
                         {menu.title}
 
                         {menu.home_menus && (
                             <button
-                                className={`dropdown-toggle-btn ${
-                                    navTitle === menu.title
-                                        ? "dropdown-opened"
-                                        : ""
-                                } d-xl-none`}
+                                className={`dropdown-toggle-btn ${navTitle === menu.title
+                                    ? "dropdown-opened"
+                                    : ""
+                                    } d-xl-none`}
                                 onClick={(e) => {
                                     e.preventDefault();
                                     toggleMobileMenu(menu.title);
@@ -56,9 +94,8 @@ const MobileMenusOnePage = () => {
                     </Link>
                     {menu.home_menus && (
                         <div
-                            className={`it-submenu submenu has-home-img ${
-                                navTitle === menu.title ? "d-block" : ""
-                            }`}
+                            className={`it-submenu submenu has-home-img ${navTitle === menu.title ? "d-block" : ""
+                                }`}
                         >
                             <div className="it-homemenu-wrapper">
                                 <div className="row gx-6 row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-5">
