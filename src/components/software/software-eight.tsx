@@ -21,7 +21,7 @@ const SoftwareEight = () => {
             id="partners"
             className="it-software-area ai-software-style cr-software-style pb-160 dt-software-style-2 z-index-1 p-relative"
             style={{
-                paddingTop: 100,
+                paddingTop: 0,
             }}
         >
             <Image

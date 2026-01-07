@@ -11,7 +11,7 @@ const SoftwareSeven = () => {
             id="investors"
             className="it-software-area ai-software-style cr-software-style pb-160 dt-software-style-2 z-index-1 p-relative"
             style={{
-                paddingTop: 100,
+                paddingTop: 0,
             }}
         >
             <Image
@@ -34,7 +34,7 @@ const SoftwareSeven = () => {
                         <div className="it-software-right-box">
                             <div className="ai-section-title-box mb-30">
                                 <h4 className="ai-section-title mb-10 it-split-text it-split-in-right">
-                                    Investors:Intrested in Investing
+                                    Investors: Intrested in Investing?
                                 </h4>
                                 <div
                                     className="it-fade-anim"
