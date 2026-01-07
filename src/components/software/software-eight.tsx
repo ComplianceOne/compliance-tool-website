@@ -62,7 +62,7 @@ const SoftwareEight = () => {
                         <div className="it-software-right-box">
                             <div className="ai-section-title-box mb-30">
                                 <h4 className="ai-section-title mb-10 it-split-text it-split-in-right">
-                                    Turn Your Compliance Work Into a Scalable Service
+                                    Partners: Turn Your Compliance Work Into a Scalable Service
                                 </h4>
                                 <div
                                     className="it-fade-anim"
